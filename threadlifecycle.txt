@@ -1,0 +1,22 @@
+THREAD LIFECYCLE
+•Thread - thread is the smallest unit of CPU execution. It is a lightweight process
+◦ Process = full program(which consumes memory and resources)
+Thread = path of execution within a process
+*Java Context = every java app starts with one thread
+main thread
+
+
+>> NEW > RUNNABLE > [RUNNING <> BLOCKED/WAITING] > TERMINATED
+
+
+1. NEW STATE = thread object created, start() not called (Trigger : Thread t = new Thread())
+
+
+2. RUNNABLE STATE =ready to run, waiting for CPU(Trigger : t.start ())
+
+
+3. RUNNING STATE = executing the run() method (Trigger : automatically JVM schedules it)
+4. BLOCKED STATE = waiting for monitor lock (Trigger :synchronized block/sethod)
+5. WAITING STATE = Indefinitely walting (Trigger : wait(), join(),)
+6. TIMED_WAITING STATE = walting with timeout (Trigger : sleep(1000), wait(1000),join(1000))
+7.TERMINATED STATE = run()finished and code execution completed
